@@ -1,12 +1,13 @@
 <?php
 
 /**
- * https://github.com/tapmodo/Jcrop < Original
  * Jcrop image cropping plugin for jQuery
  * Example cropping script
  * @copyright 2008-2009 Kelly Hallman
  * More info: http://deepliquid.com/content/Jcrop_Implementation_Theory.html
- * I changed copy paste convert function vs.vs.
+
+ * https://github.com/tapmodo/Jcrop < Original
+ * I changed copy paste convert function vs.vs. by Serkan Özdemir
 */
 
 if (isset($_POST)){
