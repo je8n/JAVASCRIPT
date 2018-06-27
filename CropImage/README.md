@@ -1,6 +1,6 @@
 ## JCrop ##
 
-+ Uzun süredir arayıp kendime göre düzenleyebileceğim kırpma aracı aradım.
++ Uzun süredir kendime göre düzenleyebileceğim kırpma aracı aradım.
 * En sonunda altta adresini belirttiğim projeyi buldum.
 * Kendime göre düzenledim, sadeleştirdim ve burada paylaşıyorum.
 
