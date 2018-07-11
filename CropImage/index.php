@@ -47,15 +47,16 @@ function crop($ext){
 	imagecopyresampled($image_p, $image, 0, 0, $gercekx, $gerceky,$yenigen,$yeniyuk, $genislik, $yukseklik);
 	imagejpeg($image_p, $ext["dest"], 95);
 }
-
+$ratio_width=1600;
+$ratio_height=500;
 if (isset($_POST)){
 	move_uploaded_file($tmp_dosyadi,$duyuru_img_dizin.$dosyadi);
 	$ext["file"]=$img;
 	$ext["dest"]=$img;
 	$ext["x"]=post("x");
 	$ext["y"]=post("y");
-	$ext["re_width"]=1600; // bottom page script find at replace > ratio 16 / 6
-	$ext["re_height"]=600;
+	$ext["re_width"]=$ratio_width; // bottom page script find at replace > ratio 16 / 6
+	$ext["re_height"]=$ratio_height;
 	$ext["js_width"]=post("jsw");
 	$ext["js_height"]=post("jsh");
 	$ext["crop_height"]=post("h");
@@ -113,7 +114,7 @@ var jcrop_api=null;
 			allowSelect: true,
 			allowMove:true,
 			allowResize:true,
-			aspectRatio: 16 / 6,
+			aspectRatio: <?php echo $ratio_width; ?> / <?php echo $ratio_height; ?>,
 			bgOpacity: .4
 		},function(){
 			jcrop_api = this;
@@ -171,7 +172,7 @@ function goruntu(input) {
 	}
 	setTimeout(function(){
 		initJcrop();
-		setTimeout(function(){jcrop_api.animateTo([0,0,1600,600]);},1000);
+		setTimeout(function(){jcrop_api.animateTo([0,0,<?php echo $ratio_width; ?>,<?php echo $ratio_height; ?>]);},1000);
 	},3000);
 
 }
