@@ -73,8 +73,7 @@ if (isset($_POST)){
 </head>
 <body>
 
-<img src="demo_files/sago.jpg" id="target" alt="[Jcrop Example]" />
-<form action="crop.php" method="post" onsubmit="return checkCoords();">
+<form method="post" onsubmit="return checkCoords();">
 	<div class="form-group">
 	<label class="control-label"><strong>Duyuru Görüntüsü </strong></label>
 	<div class="input-group">
