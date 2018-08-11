@@ -22,7 +22,7 @@
 <input type="file" name="dosya"/>
 </form>
 <a class="kaydet1">Formu Gönder formid ile</a>
-<a class="kaydet2">Formu Gönder formid ile</a>
+<a class="kaydet2">Formu Gönder serialize ile</a>
 <script>
 $(".kaydet1").click(function(){
 form_gonder("ajaxform","",kaydet_sonuc,true)
@@ -31,7 +31,7 @@ form nesnesinin içinde bos degrli telefon input var.
 formgonder ajax çalışmadan önce tüm inputları inceliyor.
 Boş varsa işlemi iptal ediyor. 
 inputun bos degeri varsa onu atlıyor. boş olabilir anlamına geliyor.
-eğer form etiketine bos özelliği eklenirse formdaki elementleri boş mu diye incelemez.
+eğer form etiketine bos özelliği eklenirse inputlara tek tek eklemeye gerek kalmadan formdaki elementleri boş mu diye incelemez.
 */
 });
 
