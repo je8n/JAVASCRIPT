@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Language" content="TR"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="<?php echo $description; ?>"/>
+<meta name="keywords" content="<?php echo $keywords; ?>"/>
+<meta name="author" content="Serkan Özdemir"/>
+<meta name="owner" content="http://www.je8n.com"/>
+<meta name="copyright" content="JE8N"/>
+<meta name="title" content="Post Data Example"/>
+<title>Post Data Example</title>
+<script src="query.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<form id="ajaxform">
+<input type="text" name="ad"/>
+<input type="password" name="sifre"/>
+<input bos type="text" name="telefon"/>
+<input type="file" name="dosya"/>
+</form>
+<a class="kaydet1">Formu Gönder formid ile</a>
+<a class="kaydet2">Formu Gönder formid ile</a>
+<script>
+$(".kaydet1").click(function(){
+form_gonder("ajaxform","",kaydet_sonuc,true)
+/*
+form nesnesinin içinde bos degrli telefon input var.
+formgonder ajax çalışmadan önce tüm inputları inceliyor.
+Boş varsa işlemi iptal ediyor.
+inputun bos degeri varsa onu atlıyor. boş olabilir anlamına geliyor.
+*/
+});
+
+$(".kaydet1").click(function(){
+form_gonder("ajaxform","",kaydet_sonuc,true);
+});
+
+$(".kaydet2").click(function(){
+var ad=$('input[name="ad"]);
+var telefon=$('input[name="telefon"]);
+var sifre=$('input[name="sifre"]);
+/* dosya ekleme işlemini buradan yapmadığım için üzerinde çalışmadım hiç */
+form_gonder({"ad":ad,"telefon":telefon,"sifre",sifre},"",kaydet_sonuc,true);
+}
+
+form_gonder("ajaxform","",kaydet_sonuc,true)
+});
+function kaydet_sonuc(msg){
+alert(msg.sonuc);
+/*
+callback işlemi için msg parametresi gerekiyor.
+msg json olarak gelen veriyi aktarıyor.
+eğer json istemiyorsan düz metin kullanmak istiyorsan
+form_gonder içindeki ajax success bölümündeki parse kısmını sil
+}
+<script>
+</body>
+</html>
