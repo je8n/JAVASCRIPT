@@ -11,7 +11,7 @@
 <meta name="copyright" content="JE8N"/>
 <meta name="title" content="Post Data Example"/>
 <title>Post Data Example</title>
-<script src="query.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="script.js"></script>
 </head>
 <body>
@@ -39,9 +39,9 @@ form_gonder("ajaxform","",kaydet_sonuc,true);
 });
 
 $(".kaydet2").click(function(){
-var ad=$('input[name="ad"]);
-var telefon=$('input[name="telefon"]);
-var sifre=$('input[name="sifre"]);
+var ad=$('input[name="ad"]');
+var telefon=$('input[name="telefon"]');
+var sifre=$('input[name="sifre"]');
 /* dosya ekleme işlemini buradan yapmadığım için üzerinde çalışmadım hiç */
 form_gonder({"ad":ad,"telefon":telefon,"sifre",sifre},"",kaydet_sonuc,true);
 }
