@@ -3,6 +3,9 @@
 
 ### formid 
 1. formid \<form id="__formid__">
+1a. if usage form element usage available __bos__ tag
+1b. fnction is fond __bos__ tag, if input empty, not terminate ajax process.
+
 2. formid serialized => __{"key1":"value1","key2":"value2"}__
 
 ### urlx
