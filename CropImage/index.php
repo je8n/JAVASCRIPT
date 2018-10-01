@@ -89,7 +89,7 @@ if (isset($_POST)){
 
 	<div class="form-group onizleme">
 	<div class="input-group">
-	<img id="target"></img>
+	<img id="target"/>
 	</div>
 
 	</div>
