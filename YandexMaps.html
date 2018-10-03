@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR" type="text/javascript"></script>
+</head>
+<body>
+<div id="map" style="width: 100%; height: 850px; border:0px; margin:-9px;"></div>
+
+<script type="text/javascript">		
+ymaps.ready(function () {
+var myMap = new ymaps.Map('map', {
+		center: [38.873928, 35.397949],
+		zoom: 7
+	}),
+	MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+		'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+	)
+  <?php foreach($noktalar as $nokta){
+    echo 'noktaekle(myMap,"'.$nokta["baslik"].'","'.$nokta["yazi"].'","'.$nokta["tip"].'","'.$nokta["lat"].'","'.$nokta["lng"].'");';
+  }
+
+});
+
+function noktaekle(myMap,title,clicktext,png,lat,lng){
+myPlacemark = new ymaps.Placemark([lat,lng], {
+		hintContent: title,
+		balloonContent: clicktext
+	}, {
+		iconLayout: 'default#image',
+		iconImageHref: 'harita_png/'+png+'.png',
+		iconImageSize: [32, 40],
+		iconImageOffset: [-15, -30]
+	});
+myMap.geoObjects.add(myPlacemark);
+};
+
+</script>
+
+</body>
+</html>
